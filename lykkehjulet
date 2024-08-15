@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+gum style \
+  --foreground 212 --border-foreground 212 --border double \
+  --align center --width 50 --margin "1 2" --padding "2 4" \
+  "Lykkehjulet"
+
+mapfile -t names < <(gum write --placeholder "Skriv deltakere nedover...")
+
+if [[ -z "${names[*]-}" ]]; then
+  exit 1
+fi
+
+gum style \
+  --foreground 212 --border-foreground 212 --border double \
+  --align center --width 50 --margin "1 2" --padding "2 4" \
+  "Deltakere:" "${names[@]}"
+
+gum confirm "Klar?" --affirmative "Snurr!!" --negative "SNURR!!"
+
+gum spin --spinner line --title "Hjulet snurrer...." -- sleep 5
+gum spin --spinner line --title "OG DEN HELDIGE EEEEEER..." -- sleep 3
+
+index=$((RANDOM % ${#names[@]}))
+
+gum style \
+  --foreground 212 --border-foreground 212 --border double \
+  --align center --width 50 --margin "1 2" --padding "2 4" \
+  "｡･:*˚:✧｡ ${names[$index]} ｡･:*˚:✧"
