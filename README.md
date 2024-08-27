@@ -7,7 +7,7 @@ Avhengigheter:
   - [ttyd](https://github.com/tsl0922/ttyd)
   - [ffmpeg](https://ffmpeg.org/)
 
-> [!PS]
+> [!NOTE]
 > Det går an å kjøre vhs uten avhengigheter med Docker, [se her](https://github.com/charmbracelet/vhs?tab=readme-ov-file#installation)
 
 ## Hvordan kan Lykkehjulet brukes
